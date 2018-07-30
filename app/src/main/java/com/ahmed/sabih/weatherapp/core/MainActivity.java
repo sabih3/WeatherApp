@@ -1,7 +1,9 @@
-package com.ahmed.sabih.weatherapp;
+package com.ahmed.sabih.weatherapp.core;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.ahmed.sabih.weatherapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
