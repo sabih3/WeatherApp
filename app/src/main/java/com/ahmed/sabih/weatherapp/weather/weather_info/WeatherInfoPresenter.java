@@ -59,11 +59,12 @@ public class WeatherInfoPresenter implements WeatherInfoContract.Presenter,
     @Override
     public void onForecastFetchedSuccess(ForecastResponseModel forecastResponseModel) {
         if(view != null){
+            //Forecast List, gives 5 days forecast with 3 hour interval
             List[] list = forecastResponseModel.getList();
             ArrayList<List> forecastDataList = new ArrayList<>();
 
+            //Extracting weather of 12 noon
             List list1 = list[8];
-
             List list2 = list[16];
             List list3 = list[24];
             List list4 = list[32];

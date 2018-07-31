@@ -4,4 +4,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="exception_weather_description">Description Currently Not Available</string>
+    <string name="exception_weather_info">Weather info cannot be retrieved this time</string>
+    <string name="btn_retry">Retry</string>
+    <string name="exception_forecast_info">Forecast cannot be retrieved this time</string>
+    <string name="exception_general_purpose">Info cannot be retrieved this time</string>
 </resources>

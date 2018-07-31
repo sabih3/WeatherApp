@@ -2,6 +2,7 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/screen_weather_parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -73,7 +74,8 @@
                     android:layout_alignTop="@id/tv_weather_temp"
                     android:layout_toRightOf="@id/tv_weather_temp"
                     android:textSize="18sp"
-                    android:text="\u00B0 C"/>
+                    android:text="\u00B0 C"
+                    android:visibility="invisible"/>
 
                 <TextView
                     android:id="@+id/tv_separator_pipe"
@@ -83,7 +85,8 @@
                     android:layout_toRightOf="@id/tv_convert_celcius"
                     android:layout_marginHorizontal="10dp"
                     android:textSize="18sp"
-                    android:text="|"/>
+                    android:text="|"
+                    android:visibility="invisible"/>
                 <TextView
                     android:id="@+id/tv_convert_fah"
                     android:layout_width="wrap_content"
@@ -91,7 +94,8 @@
                     android:layout_alignTop="@id/tv_weather_temp"
                     android:layout_toRightOf="@id/tv_separator_pipe"
                     android:textSize="18sp"
-                    android:text="\u00B0 F"/>
+                    android:text="\u00B0 F"
+                    android:visibility="invisible"/>
             </RelativeLayout><!--End Main Temperature Container-->
 
             <!--Misc Info Container-->
@@ -148,6 +152,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/wind_info_container"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"

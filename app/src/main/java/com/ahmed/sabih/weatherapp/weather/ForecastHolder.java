@@ -35,9 +35,9 @@ class ForecastHolder extends RecyclerView.ViewHolder{
     public void bindData(List forecast) {
 
         tvForecastDay.setText("MON");
-        tvForecastTemp.setText(forecast.getMain().getTemp_max()+" "+ forecast.getMain().getTemp_min());
+        //tvForecastTemp.setText(forecast.getMain().getTemp_max()+" "+ forecast.getMain().getTemp_min());
 
-
+        //TODO: refactor below snipped & take it to any Helper class
         Calendar cal = Calendar.getInstance(Locale.ENGLISH);
         cal.setTimeInMillis(Long.parseLong(forecast.getDt()) * 1000L);
         String week = DateFormat.format("E", cal).toString();

@@ -6,10 +6,16 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.ahmed.sabih.weatherapp.R;
+import com.ahmed.sabih.weatherapp.core.adapters.FragmentAdapter;
+import com.ahmed.sabih.weatherapp.model.FragmentHolder;
+import com.ahmed.sabih.weatherapp.restaurants.restaurant_list.ScreenRestaurantList;
+import com.ahmed.sabih.weatherapp.weather.weather_info.ScreenWeatherInfo;
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -20,7 +26,11 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
+import java.util.ArrayList;
 import java.util.Map;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,12 +38,20 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CHECK_SETTINGS = 123;
     private FusedLocationProviderClient mFusedLocationClient;
 
+    @BindView(R.id.main_pager)ViewPager pager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ButterKnife.bind(this);
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        ViewPagerHelper pagerHelper = new ViewPagerHelper();
+        FragmentAdapter viewPagerAdapter = pagerHelper.
+                                           getViewPagerAdapter(getSupportFragmentManager());
+        pager.setAdapter(viewPagerAdapter);
 
         checkLocationPermission();
 
@@ -57,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             mFusedLocationClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
                 @Override
                 public void onSuccess(Location location) {
-
+                    //TODO: Fix location null issue
                 }
             });
         }

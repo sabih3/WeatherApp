@@ -3,8 +3,8 @@ package com.ahmed.sabih.weatherapp.core;
 public class UserManager {
 
     private static UserManager sInstance;
-    private static String userLat = "25.3463";
-    private static String userLon = "55.4209";
+    private static String userLat = "25.1985";
+    private static String userLon = "55.2796";
 
     private UserManager() {
     }

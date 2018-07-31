@@ -39,6 +39,6 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastHolder>{
 
     @Override
     public int getItemCount() {
-        return mDataset.size();
+        return mDataset == null ? 0 : mDataset.size();
     }
 }
