@@ -3,15 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="160dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:paddingVertical="10dp">
 
 
     <ImageView
         android:id="@+id/iv_thumbnail"
         android:layout_width="140dp"
         android:layout_height="140dp"
-        android:src="@drawable/thumbnail"
-        android:padding="10dp"/>
+        android:src="@drawable/thumbnail"/>
     
     <LinearLayout
 
@@ -50,8 +50,7 @@
                 android:layout_height="wrap_content"
                 android:text="Chinese"
                 android:paddingHorizontal="10dp"
-                android:textSize="14sp"
-                android:textStyle="bold"/>
+                android:textSize="14sp"/>
         </LinearLayout><!--Location & Cuisine Layout End-->
 
 

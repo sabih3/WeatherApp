@@ -11,7 +11,7 @@
         android:id="@+id/restaurant_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        class="com.ahmed.sabih.weatherapp.restaurants.restaurant_list.ScreenRestaurantList">
+        class="com.ahmed.sabih.weatherapp.weather.weather_info.ScreenWeatherInfo">
 
     </fragment>
 

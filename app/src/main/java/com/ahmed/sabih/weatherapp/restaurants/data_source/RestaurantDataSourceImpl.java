@@ -1,5 +1,6 @@
 package com.ahmed.sabih.weatherapp.restaurants.data_source;
 
+import com.ahmed.sabih.weatherapp.core.UserManager;
 import com.ahmed.sabih.weatherapp.restaurants.restaurant_list.RestaurantListContract;
 import com.ahmed.sabih.weatherapp.restaurants.model.ResponseNearByRestaurants;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -43,7 +44,8 @@ public class RestaurantDataSourceImpl implements RestaurantListContract.Restaura
 
     @Override
     public void getNearByRestaurants(final OnCompleteListener onCompleteListener) {
-        api.fetchNearByRestaurants("f97c65f47221aaad092e22075368d1d6","25.2048","55.2708")
+        api.fetchNearByRestaurants("f97c65f47221aaad092e22075368d1d6",
+                                    UserManager.getUserLat(),UserManager.getUserLon())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<ResponseNearByRestaurants>() {

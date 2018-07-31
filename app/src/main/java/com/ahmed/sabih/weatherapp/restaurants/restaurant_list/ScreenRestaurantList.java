@@ -45,6 +45,12 @@ public class ScreenRestaurantList extends Fragment implements RestaurantListCont
     }
 
     @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        presenter.onDestroy();
+    }
+
+    @Override
     public void showProgress() {
         pullToRefresh.setRefreshing(true);
     }
@@ -75,4 +81,6 @@ public class ScreenRestaurantList extends Fragment implements RestaurantListCont
             presenter.fetchData();
         }
     }
+
+
 }

@@ -19,6 +19,7 @@ public class RestaurantListPresenter implements RestaurantListContract.Presenter
 
     @Override
     public void fetchData() {
+
         view.showProgress();
         dataSourceImpl.getNearByRestaurants(this);
 
@@ -28,18 +29,26 @@ public class RestaurantListPresenter implements RestaurantListContract.Presenter
 
     @Override
     public void onDestroy() {
-
+        this.view = null;
     }
 
 
     @Override
     public void onCompeted(ResponseNearByRestaurants responseNearByRestaurants) {
-        view.hideProgress();
-        view.setDataInList(responseNearByRestaurants);
+        //This can take time, and user can get away the screen
+        if(view != null){
+            view.hideProgress();
+            view.setDataInList(responseNearByRestaurants);
+        }
+
     }
 
     @Override
     public void onFailure(Throwable e) {
-     view.onError();
+        if(view != null){
+            view.hideProgress();
+            view.onError();
+        }
+
     }
 }
